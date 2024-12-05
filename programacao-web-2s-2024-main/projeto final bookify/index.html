@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookify - Seu clube de Livros</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo-container">
+                <img src="img/logo.png" alt="Bookify Logo" class="logo">
+            </div>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Buscar livros...">
+                <button type="button"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="auth-buttons">
+                <button id="loginBtn">Login</button>
+                <button id="registerBtn">Registrar</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="featured-books">
+            <h2>Livros em Destaque</h2>
+            <div class="books-grid" id="featuredBooks">
+                
+            </div>
+        </section>
+
+
+        <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Login</h2>
+                <form id="loginForm">
+                    <input type="email" placeholder="E-mail" required>
+                    <input type="password" placeholder="Senha" required>
+                    <button type="submit">Entrar</button>
+                    <a href="#" class="forgot-password">Esqueceu a senha?</a>
+                </form>
+            </div>
+        </div>
+
+
+        <div id="registerModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Registro</h2>
+                <form id="registerForm">
+                    <input type="text" placeholder="Nome" required>
+                    <input type="email" placeholder="E-mail" required>
+                    <input type="password" placeholder="Senha" required>
+                    <input type="password" placeholder="Confirmar Senha" required>
+                    <button type="submit">Registrar</button>
+                </form>
+            </div>
+        </div>
+
+ 
+        <div id="reviewModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Avaliar Livro</h2>
+                <form id="reviewForm">
+                    <div class="star-rating">
+                        <i class="fas fa-star" data-rating="1"></i>
+                        <i class="fas fa-star" data-rating="2"></i>
+                        <i class="fas fa-star" data-rating="3"></i>
+                        <i class="fas fa-star" data-rating="4"></i>
+                        <i class="fas fa-star" data-rating="5"></i>
+                    </div>
+                    <textarea 
+                        class="review-textarea" 
+                        placeholder="Escreva sua avaliação do livro..." 
+                        required
+                    ></textarea>
+                    <button type="submit" class="review-btn">Enviar Avaliação</button>
+                </form>
+                <div class="reviews-list"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Bookify - Todos os direitos reservados</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="bookApi.js"></script>
+    <script src="script.js"></script>
+    <script src="review.js"></script>
+</body>
+</html>
